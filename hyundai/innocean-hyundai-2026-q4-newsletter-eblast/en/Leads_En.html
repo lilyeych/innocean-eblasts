@@ -1,0 +1,1257 @@
+<!--
+%%[
+SET @model = AttributeValue("ModelName")
+SET @year = AttributeValue("ModelYear")
+SET @FirstName = AttributeValue("FirstName")
+SET @DealerName = AttributeValue("DealerName")
+SET @GroupId = AttributeValue("GroupId")
+SET @EncryptedGID = AttributeValue("EncryptedGID")
+
+/* CloudPage IDs */
+VAR @ENGLISH_PageID, @FRENCH_PageID
+SET @ENGLISH_PageID = 1318
+SET @FRENCH_PageID = 1318
+
+VAR @ENGLISH_ToggleLink, @FRENCH_ToggleLink
+
+SET @ENGLISH_ToggleLink = CloudPagesURL(@ENGLISH_PageID, 'SubscriberKey', _SubscriberKey, 'EmailAddress',
+RequestParameter("EmailAddress"), 'FirstName', @FirstName, 'model', @ModelName,
+'DealerName', @DealerName, 'year', @ModelYear, 'PreferredLanguage', @PreferredLanguage, 'GroupId', @GroupId,
+'EncryptedGID', @EncryptedGID, 'ToggleLanguage', 'ENGLISH')
+
+SET @FRENCH_ToggleLink = CloudPagesURL(@FRENCH_PageID, 'SubscriberKey', _SubscriberKey, 'EmailAddress',
+RequestParameter("EmailAddress"),'FirstName', @FirstName, 'model', @ModelName,
+'DealerName', @DealerName, 'year', @ModelYear, 'PreferredLanguage', @PreferredLanguage, 'GroupId', @GroupId,
+'EncryptedGID', @EncryptedGID, 'ToggleLanguage', 'FRENCH')
+]%%
+-->
+<!DOCTYPE html>
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+	xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="x-apple-disable-message-reformatting">
+	<title>Make room for every stick, bag and adventure</title>
+	<style type="text/css">
+		/* CLIENT-SPECIFIC STYLES */
+
+		* {
+			mso-line-height-rule: exactly;
+		}
+
+		body,
+		div,
+		table,
+		td,
+		p,
+		a,
+		li {
+			-webkit-text-size-adjust: 100% !important;
+			-ms-text-size-adjust: 100% !important;
+		}
+
+		#outlook a {
+			padding: 0;
+		}
+
+		.ReadMsgBody {
+			width: 100%;
+		}
+
+		.ExternalClass {
+			width: 100%;
+		}
+
+		.ExternalClass,
+		.ExternalClass p,
+		.ExternalClass span,
+		.ExternalClass font,
+		.ExternalClass td,
+		.ExternalClass div {
+			line-height: 100%;
+		}
+
+		table,
+		tr,
+		td {
+			border-spacing: 0 !important;
+			mso-table-lspace: 0px !important;
+			mso-table-rspace: 0pt !important;
+			mso-line-height-rule: exactly !important;
+		}
+
+		img {
+			-ms-interpolation-mode: bicubic !important;
+		}
+
+		/* RESET STYLES */
+
+		table,
+		td {
+			border-collapse: collapse !important;
+		}
+
+		body {
+			margin: 0 !important;
+			padding: 0 !important;
+			width: 100% !important;
+			height: 100% !important;
+		}
+
+		img {
+			border: 0;
+			height: auto;
+			line-height: 100%;
+			outline: none;
+			text-decoration: none;
+		}
+
+		/* iOS BLUE LINK FIX */
+
+		a[x-apple-data-detectors] {
+			color: inherit !important;
+			text-decoration: none !important;
+			font-size: inherit !important;
+			font-family: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+
+		/* Gmail BLUE LINK FIX - Apply ID to body tag */
+
+		u+#body a {
+			color: inherit !important;
+			text-decoration: none !important;
+			font-size: inherit !important;
+			font-family: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+
+		/* Else BLUE LINK FIX */
+
+		span.blue-link-fix a {
+			color: inherit !important;
+			text-decoration: none !important;
+			font-size: inherit !important;
+			font-family: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+
+		/* ANDROID CENTER FIX */
+
+		div[style*="margin: 16px 0"] {
+			margin: 0 !important;
+		}
+
+		/* LIST ITEM FIX */
+
+		li {
+			text-align: -webkit-match-parent;
+			display: list-item;
+		}
+
+		/* STOP HYPHENATION */
+
+		td {
+			word-break: keep-all !important;
+			-moz-hyphens: none !important;
+			-ms-hyphens: none !important;
+			-webkit-hyphens: none !important;
+			/* hyphens: none !important; */
+		}
+
+		/* DESKTOP STYLES */
+		@media all and (min-width: 640px) {
+			.mobile-nav {
+				font-size: 18px !important;
+				color: lightblue !important;
+			}
+		}
+
+		/* MOBILE STYLES */
+		@media all and (max-width: 639px) {
+
+			.w100 {
+				width: 100% !important;
+				min-width: initial !important;
+			}
+
+			.hide-on-mobile {
+				display: none !important;
+				max-height: 0 !important;
+				overflow: hidden !important;
+			}
+
+			.show-on-mobile {
+				display: inline-block !important;
+				max-height: none !important;
+			}
+
+			.display-on-mobile {
+				display: block !important;
+				max-height: none !important;
+			}
+
+			.stack-column-left,
+			.stack-column-center,
+			.stack-column-right {
+				display: block !important;
+				width: 100% !important;
+				max-width: 100% !important;
+				direction: ltr !important;
+			}
+
+			.stack-column-center {
+				text-align: center !important;
+			}
+
+			.stack-column-right {
+				text-align: right !important;
+			}
+
+			.column-center {
+				text-align: center !important;
+			}
+
+			.column-right {
+				text-align: right !important;
+			}
+
+			.responsive-cell {
+				width: 100% !important;
+			}
+
+			/* FULL-WIDTH TABLES */
+			.responsive-table {
+				display: table !important;
+				width: 100% !important;
+			}
+
+			/* FULL-WIDTH IMAGES */
+			.img-max {
+				width: 100% !important;
+				max-width: 100% !important;
+				height: auto !important;
+			}
+
+			/* FULL-WIDTH IMAGES - FORGO ORIGINAL SIZE */
+			.img-max-100 {
+				width: 100% !important;
+				height: auto !important;
+			}
+
+			/* ADJUST MOBILE PADDING */
+			.mobile-pad {
+				padding-right: 3.90625% !important;
+				padding-left: 3.90625% !important;
+			}
+
+			.mobile-pad-0 {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+
+			.mobile-pad-10 {
+				padding-right: 1.5625% !important;
+				padding-left: 1.5625% !important;
+			}
+
+			.mobile-pad-15 {
+				padding-right: 2.34375% !important;
+				padding-left: 2.34375% !important;
+			}
+
+			.mobile-pad-20 {
+				padding-right: 3.125% !important;
+				padding-left: 3.125% !important;
+			}
+
+			.mobile-pad-25 {
+				padding-right: 3.90625% !important;
+				padding-left: 3.90625% !important;
+			}
+
+			.mobile-pad-35 {
+				padding-right: 5.46875% !important;
+				padding-left: 5.46875% !important;
+			}
+
+			.mobile-pad-40 {
+				padding-right: 6.25% !important;
+				padding-left: 6.25% !important;
+			}
+
+			.mobile-pad-50 {
+				padding-right: 7.8125% !important;
+				padding-left: 7.8125% !important;
+			}
+
+			.mobile-pad-90 {
+				padding-right: 13% !important;
+				padding-left: 13% !important;
+			}
+
+			/* ADJUST MOBILE BOTTOM PADDING */
+			.mobile-bottom-pad {
+				padding-bottom: 18px !important;
+			}
+
+			/* ADJUST MOBILE PADDING */
+			.padding-zero {
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
+
+			/* ADJUST FONT SIZE */
+			td.mobile-font-size {
+				font-size: 28px !important;
+				line-height: 32px !important;
+			}
+
+			/* CENTRE TEXT ON MOBILE */
+			.mobile-text-center {
+				text-align: center !important;
+			}
+
+			/* SWITCH BORDER DIRECTION */
+			.mobile-border {
+				border-right-color: #eaecec !important;
+				border-bottom: 1px solid #002642;
+			}
+
+			/* ADJUST MOBILE WIDTH */
+			.mobile-width {
+				width: 134px !important;
+			}
+
+			/* ADJUST MOBILE HEIGHT */
+			.mobile-height {
+				height: 160px !important;
+			}
+
+			/* MOBILE LINE BREAK */
+			.mobile-line-break {
+				display: block !important;
+			}
+
+			.logo-bar-left {
+				width: 50% !important;
+			}
+
+			.logo-bar-right {
+				width: 50% !important;
+			}
+
+		}
+	</style>
+
+	<style>
+		@font-face {
+			font-family: 'HyundaiSansText';
+			src: url("https://hyundai-assets.s3.ca-central-1.amazonaws.com/fonts/HyundaiSansText-Regular.woff") format("woff");
+			font-weight: normal;
+		}
+
+		@font-face {
+			font-family: 'HyundaiSansHead';
+			src: url("https://hyundai-assets.s3.ca-central-1.amazonaws.com/fonts/HyundaiSansHead-Regular.woff") format("woff");
+			font-weight: normal;
+		}
+	</style>
+
+	<!--[if gte mso 9]>
+ <style>
+  li {text-align: -webkit-match-parent; display: list-item; text-indent: -1em;}
+  ul {padding: 0 !important;}
+ </style>
+ <![endif]-->
+
+	<!--[if gte mso 9]>
+ <xml>
+  <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+  <o:PixelsPerInch>96</o:PixelsPerInch>
+  </o:OfficeDocumentSettings>
+ </xml>
+ <![endif]-->
+
+	<!--[if gte mso 9]>
+ <style>
+  .outlook-fix {
+   font-size: 100% !important;
+   vertical-align: top;
+   mso-text-raise: 20%;
+  }
+ </style>
+ <![endif]-->
+
+</head>
+
+<body id="body" bgcolor="#f5f5f5" topmargin="0" rightmargin="0" leftmargin="0"
+	style="margin: 0 !important; padding: 0 !important; width: 100% !important; height: 100% !important; background-color: #f5f5f5 !important;">
+	<!-- PREVIEW TEXT -->
+	<div
+		style="display: none; font-size: 1px; color: #f5f5f5; line-height: 1px; max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden;">
+	</div>
+	<!-- BORDER -->
+	<table bgcolor="#f5f5f5" align="center" width="640" cellpadding="0" cellspacing="0" border="0" role="presentation"
+		class="responsive-table" style="table-layout: fixed; background-color: #f5f5f5;">
+		<tr>
+			<td bgcolor="#fffffe" style="padding: 0 0 0 0; background-color: #fffffe;">
+
+				<!-- PREHEADER -->
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+					style="table-layout: fixed; background-color: #fffffe;">
+					<tr>
+						<td align="center" style="padding: 0 25px 0 25px;" class="mobile-pad-25">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+								class="responsive-table">
+								<tr>
+									<td style="padding: 20px 0 20px 0;">
+										<table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+											border="0" class="responsive-table">
+											<tr>
+												<td class="" width="50%" valign="middle"
+													style="padding: 5px 0 5px 0; text-align: left; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													<a href="%%view_email_url%%" target="_blank" alias="View Online"
+														style="font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c; text-decoration: underline;">View
+														online version</a>
+												</td>
+												<td class="" valign="middle"
+													style="padding: 5px 0 5px 0; text-align: right; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													<a href="%%=RedirectTo(@ENGLISH_ToggleLink)=%%" target="_blank"
+														alias="English Version"
+														style="font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c; text-decoration: underline;">English</a>
+													/
+													<a href="%%=RedirectTo(@FRENCH_ToggleLink)=%%" target="_blank"
+														alias="French Version"
+														style="font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c; text-decoration: underline;">French</a>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+
+				<!-- HEADER -->
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+					style="table-layout: fixed;">
+					<tr>
+						<td align="center" style="padding: 0 0 0 0; border: 0; line-height:1px; font-size:1px;">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+								class="responsive-table">
+								<tr>
+									<td>
+										<table width="100%" cellspacing="0" cellpadding="0" border="0"
+											role="presentation">
+											<tr>
+												<td align="center">
+													<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Logo-002_0-X-X.gif"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile" alt="HYUNDAI" />
+													<!--[if !mso]><!-->
+													<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Logo-002_0-X-X.gif"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile" alt="HYUNDAI" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<a href="https://www.hyundaicanada.com/en" target="_blank"
+														alias="Image - Hyundai Canada">
+														<img src="./images/eblast_202610_leads_hero_1_desktop_en.jpg"
+															width="640" border="0"
+															style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max hide-on-mobile"
+															alt="Make room for hockey" />
+														<!--[if !mso]><!-->
+														<img src="./images/eblast_202610_leads_hero_1_mobile_en.jpg"
+															width="640" border="0"
+															style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max display-on-mobile"
+															alt="Make room for hockey" />
+														<!--<![endif]-->
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_hero_2_desktop_en.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_hero_2_mobile_en.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td align="center" style="padding: 0 90px 0 90px; background-color: #fffffe;"
+							class="mobile-pad-90">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+								class="responsive-table">
+								<tr>
+									<td style="padding: 20px 0 0 0;">
+										<table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+											border="0" class="responsive-table">
+											<tr>
+												<td valign="middle"
+													style="padding: 0 0 0 0; text-align: left; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 400; font-size: 14px; line-height: 18px;">
+													<table role="presentation" width="100%" height="100%"
+														cellpadding="0" cellspacing="0">
+														<tr>
+															<td valign="middle">
+																<table width="100%" align="left" cellpadding="0"
+																	cellspacing="0" border="0" role="presentation"
+																	class="responsive-table">
+																	<tr>
+																		<td align="left"
+																			style="padding: 0 0 15px 0; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;">
+																			%%=IIF(EMPTY(@FirstName), "Hi,", Concat("Hi
+																			", ProperCase(@FirstName), ","))=%%
+																		</td>
+																	</tr>
+
+																	<tr>
+																		<td align="left"
+																			style="padding: 0 0 15px 0; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #000000;">
+																			For hockey families, the season means long drives, wet, heavy gear bags and kids. Hyundai SUVs and vehicles offer the perfect blend of space and versatility to get you through the season in comfort and&nbsp;style. 
+																		</td>
+																	</tr>
+
+																</table>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<!-- CARS -->
+					<tr>
+						<td align="center" style="padding: 0 0 0 0; border: 0; line-height:1px; font-size:1px;">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+								class="responsive-table">
+								<tr>
+									<td>
+										<table width="100%" cellspacing="0" cellpadding="0" border="0"
+											role="presentation">
+											<tr>
+												<td align="center" style="padding: 0 0 40px 0;">
+													<img src="./images/eblast_202610_leads_snow_border.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max"
+														alt="" />
+												</td>
+											</tr>
+
+											<tr>
+												<td align="center" style="padding: 0 0 10px 0;">
+													<img src="./images/eblast_202610_leads_car_1_desktop_en.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="TUCSON" />
+														<!--[if !mso]><!-->
+														<img src="./images/eblast_202610_leads_car_1_mobile_en.png"
+															width="640" border="0"
+															style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max display-on-mobile"
+															alt="" />
+														<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 0 90px 20px 90px; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #000000;">
+													A compact SUV that’s ideal for one-player families. Striking design, great fuel economy and nimble handling make it ideal for daily commutes and long weekend road&nbsp;trips.
+												</td>
+											</tr>
+
+											<tr>
+												<td align="center" style="padding: 0 0 10px 0;">
+													<img src="./images/eblast_202610_leads_car_2_desktop_en.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="SANTA FE" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_car_2_mobile_en.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 0 90px 20px 90px; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #000000;">
+													A midsize SUV with style and cargo space to spare. Perfect for carpooling families who need room for goalie equipment and&nbsp;more. 
+												</td>
+											</tr>
+
+											<tr>
+												<td align="center" style="padding: 0 0 10px 0;">
+													<img src="./images/eblast_202610_leads_car_3_desktop_en.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="PALISADE" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_car_3_mobile_en.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 0 90px 20px 90px; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #000000;">
+													A premium family SUV with ample cargo space, advanced safety features and refined comfort. Well-suited for families with multiple hockey players who want to arrive at the rink in total comfort and&nbsp;style.
+												</td>
+											</tr>
+
+											<tr>
+												<td align="center" style="padding: 0 0 10px 0;">
+													<img src="./images/eblast_202610_leads_car_4_desktop_en.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="IONIQ 9" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_car_4_mobile_en.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 0 90px 0 90px; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #000000;">
+													A three-row, all-electric mid-size SUV with a spacious interior, advanced safety features, fast-charging capabilities and extended range. Well-equipped for car pools and road trips with its quiet, smooth&nbsp;ride. 
+												</td>
+											</tr>
+
+											<tr>
+												<td align="center"
+													style="padding: 35px 0 10px 0;">
+													<center>
+														<a href="https://google.ca"
+															alias="CTA04 - Explore our SUVs"
+															target="_blank"
+															style="text-decoration: underline !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002C5F;">
+															<img src="./images/eblast_202610_leads_cta_explore_suv_en.png"
+																width="192" height="39"
+																border="0"
+																style="padding: 0; width: 100%; max-width: 192px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002C5F;"
+																alt="Explore our SUVs">
+														</a>
+													</center>
+												</td>
+											</tr>
+
+										</table>
+									</td>
+								</tr>
+
+							</table>
+						</td>
+					</tr>
+				</table>
+
+				<!-- SECTION: New face of Hyundai -->
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+					style="table-layout: fixed;">
+					<tr>
+						<td align="center" style="padding: 0 0 0 0; border: 0; line-height:1px; font-size:1px;">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+								class="responsive-table">
+								<tr>
+									<td>
+										<table width="100%" cellspacing="0" cellpadding="0" border="0"
+											role="presentation">
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_new_face_1_desktop_en.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_new_face_1_mobile_en.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_new_face_2_desktop_en.jpg"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="The new face of Hyundai: Matthew Schaefer" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_new_face_2_mobile_en.jpg"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="The new face of Hyundai: Matthew Schaefer" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_new_face_3_desktop_en.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_new_face_3_mobile_en.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 25px 90px 25px 90px; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #000000;">
+													Hyundai Canada is proud to announce that Matthew Schaeffer is our new brand ambassador and the face of Hyundai Hope on Wheels. Drafted first overall by the New York Islanders in 2025, the 19-year-old defenceman is poised to lead the next generation of NHL&nbsp;superstars. 
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_cancer_img_desktop.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_cancer_img_mobile.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 10px 90px 0 90px; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #000000;">
+													Since losing his mother Jennifer to breast cancer in 2024, the Hamilton, ON native has become an ambassador for Hockey Fights Cancer and co-founded the Jennifer Schaefer Child Support Center with Northwell Health in New York, which provides dedicated child care for parents undergoing cancer&nbsp;treatment. 
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 35px 90px 25px 90px;">
+													<a href="https://google.ca"
+														alias="CTA04 - Learn more"
+														target="_blank"
+														style="text-decoration: underline !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002C5F;">
+														<img src="./images/eblast_202610_leads_cta_learn_more_en.png"
+															width="142" height="39"
+															border="0"
+															style="padding: 0; width: 100%; max-width: 142px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002C5F;"
+															alt="Learn more">
+													</a>
+												</td>
+											</tr>
+
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_cancer_heading_desktop_en.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="Driving the fight against childhood cancer forward" />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_cancer_heading_mobile_en.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="Driving the fight against childhood cancer forward" />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 25px 90px 0 90px; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 16px; line-height: 24px; color: #000000;">
+													Entering its second year in Canada, Hyundai Hope on Wheels continues its nationwide mission to end childhood cancer. This year, it has committed more than $4.1 million to support children battling cancer at pediatric oncology centres across Canada. Hyundai, its 226 dealers and drivers are making a difference together. When a new Hyundai is sold, a portion of that sale helps to fund critical research and care. Every Hyundai driver brings all of us closer to a future free of pediatric&nbsp;cancer.
+												</td>
+											</tr>
+											<tr>
+												<td class="mobile-pad-90" align="left"
+													style="padding: 35px 90px 25px 90px;">
+													<a href="https://google.ca"
+														alias="CTA04 - Learn more"
+														target="_blank"
+														style="text-decoration: underline !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002C5F;">
+														<img src="./images/eblast_202610_leads_cta_learn_more_en.png"
+															width="142" height="39"
+															border="0"
+															style="padding: 0; width: 100%; max-width: 142px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002C5F;"
+															alt="Learn more">
+													</a>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+				<!-- SECTION: Winter Tire -->
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+					style="table-layout: fixed;">
+					<tr>
+						<td align="center" style="padding: 0 0 0 0; border: 0; line-height:1px; font-size:1px;">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+								class="responsive-table">
+								<tr>
+									<td>
+										<table width="100%" cellspacing="0" cellpadding="0" border="0"
+											role="presentation">
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_winter_tires_1_desktop.png"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max"
+														alt="" />
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_winter_tires_2_desktop_en.jpg"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max hide-on-mobile"
+														alt="Do you use winter tires? " />
+													<!--[if !mso]><!-->
+													<img src="./images/eblast_202610_leads_winter_tires_2_mobile_en.png"
+														width="640" border="0"
+														style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max display-on-mobile"
+														alt="Do you use winter tires? " />
+													<!--<![endif]-->
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<a href="https://google.ca" target="_blank"
+														alias="Image - (A) Yes, always">
+														<img src="./images/eblast_202610_leads_winter_tires_3_desktop_en.png"
+															width="640" border="0"
+															style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max hide-on-mobile"
+															alt="(A) Yes, always" />
+														<!--[if !mso]><!-->
+														<img src="./images/eblast_202610_leads_winter_tires_3_mobile_en.png"
+															width="640" border="0"
+															style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max display-on-mobile"
+															alt="(A) Yes, always" />
+													<!--<![endif]-->
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<a href="https://google.ca" target="_blank"
+														alias="Image - (B) Yes, sometimes">
+														<img src="./images/eblast_202610_leads_winter_tires_4_desktop_en.png"
+															width="640" border="0"
+															style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max hide-on-mobile"
+															alt="(B) Yes, sometimes" />
+														<!--[if !mso]><!-->
+														<img src="./images/eblast_202610_leads_winter_tires_4_mobile_en.png"
+															width="640" border="0"
+															style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max display-on-mobile"
+															alt="(B) Yes, sometimes" />
+													<!--<![endif]-->
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<a href="https://google.ca" target="_blank"
+														alias="Image - (C) Never">
+														<img src="./images/eblast_202610_leads_winter_tires_5_desktop_en.png"
+															width="640" border="0"
+															style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max hide-on-mobile"
+															alt="(C) Never" />
+														<!--[if !mso]><!-->
+														<img src="./images/eblast_202610_leads_winter_tires_5_mobile_en.png"
+															width="640" border="0"
+															style="display: none; padding: 0; width: 100%; max-width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+															class="img-max display-on-mobile"
+															alt="(C) Never" />
+													<!--<![endif]-->
+													</a>
+												</td>
+											</tr>
+											<tr>
+												<td align="center">
+													<img src="./images/eblast_202610_leads_winter_tires_6_desktop_en.jpg"
+														width="640" border="0"
+														style="display: block; padding: 0; width: 640px; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+														class="img-max"
+														alt="" />
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+				<!-- FOOTER -->
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+					style="table-layout: fixed;">
+					<tbody>
+						<tr>
+							<td align="center" style="padding: 0 0 0 0; border: 0;" class="padding-zero">
+								<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+									class="responsive-table">
+									<tbody>
+										<tr>
+											<td style="padding: 0 0 25px 0;">
+												<table width="100%" cellpadding="0" cellspacing="0" border="0"
+													role="presentation" class="responsive-table">
+													<tbody>
+														<tr>
+															<td
+																style="padding: 10px 10px 10px 10px; border-top: 1px solid #a09e9e; border-right: 0; border-bottom: 1px solid #a09e9e; border-left: 0; mso-border-top-alt: 1px solid #a09e9e; mso-border-bottom-alt: 1px solid #a09e9e;">
+																<table role="presentation" width="100%" cellspacing="0"
+																	cellpadding="0" border="0" class="responsive-table">
+																	<tbody>
+																		<tr>
+																			<td width="29.6875%"
+																				style="padding: 0 0 0 0; text-align: center;"
+																				class="padding-zero">
+																				<a href="https://www.hyundaicanada.com/en"
+																					alias="Footer01 - HyundaiCanada"
+																					target="_blank"
+																					style="text-decoration: underline !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;">
+																					<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Footer-001_1Hyundai-E-D.gif"
+																						width="184" height="78"
+																						border="0"
+																						style="display: block; padding: 0; width: 184px; height: 78px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+																						class="img-max hide-on-mobile"
+																						alt="hyundaicanada.com">
+																					<!--[if !mso]><!-->
+																					<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Footer-001_1Hyundai-E-M.gif"
+																						width="100%" border="0"
+																						style="display: none; padding: 0; width: 100%; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+																						class="img-max display-on-mobile"
+																						alt="hyundaicanada.com">
+																					<!--<![endif]-->
+																				</a>
+																			</td>
+																			<td width="21.875%"
+																				style="padding: 0 0 0 0; text-align: center;"
+																				class="padding-zero">
+																				<a href="https://www.hyundaicanada.com/en/shopping-tools/find-a-dealer"
+																					alias="Footer02 - FindADealer"
+																					target="_blank"
+																					style="text-decoration: underline !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;">
+																					<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Footer-001_2Dealer-E-D.gif"
+																						width="136" height="78"
+																						border="0"
+																						style="display: block; padding: 0; width: 136px; height: 78px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+																						class="img-max hide-on-mobile"
+																						alt="Find a Dealer">
+																					<!--[if !mso]><!-->
+																					<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Footer-001_2Dealer-E-M.gif"
+																						width="100%" border="0"
+																						style="display: none; padding: 0; width: 100%; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+																						class="img-max display-on-mobile"
+																						alt="Find a Dealer">
+																					<!--<![endif]-->
+																				</a>
+																			</td>
+																			<td width="24.21875%"
+																				style="padding: 0 0 0 0; text-align: center;"
+																				class="padding-zero">
+																				<a href="https://www.hyundaicanada.com/en/shopping-tools/request-a-quote"
+																					alias="Footer03 - RequestAQuote"
+																					target="_blank"
+																					style="text-decoration: underline !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;">
+																					<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Footer-001_3Quote-E-D.gif"
+																						width="150" height="78"
+																						border="0"
+																						style="display: block; padding: 0; width: 150px; height: 78px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+																						class="img-max hide-on-mobile"
+																						alt="Request a Quote">
+																					<!--[if !mso]><!-->
+																					<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Footer-001_3Quote-E-M.gif"
+																						width="100%" border="0"
+																						style="display: none; padding: 0; width: 100%; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+																						class="img-max display-on-mobile"
+																						alt="Request a Quote">
+																					<!--<![endif]-->
+																				</a>
+																			</td>
+																			<td width="24.21875%"
+																				style="padding: 0 0 0 0; text-align: center;"
+																				class="padding-zero">
+																				<a href="https://www.hyundaicanada.com/en/shopping-tools/buildandprice"
+																					alias="Footer04 - BuildAndPrice"
+																					target="_blank"
+																					style="text-decoration: underline !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;">
+																					<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Footer-001_4Build-E-D.gif"
+																						width="150" height="78"
+																						border="0"
+																						style="display: block; padding: 0; width: 150px; height: 78px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+																						class="img-max hide-on-mobile"
+																						alt="Build and Price">
+																					<!--[if !mso]><!-->
+																					<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Footer-001_4Build-E-M.gif"
+																						width="100%" border="0"
+																						style="display: none; padding: 0; width: 100%; height: auto; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #000000;"
+																						class="img-max display-on-mobile"
+																						alt="Build and Price">
+																					<!--<![endif]-->
+																				</a>
+																			</td>
+																		</tr>
+																	</tbody>
+																</table>
+															</td>
+														</tr>
+													</tbody>
+												</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+
+				<!-- SOCIAL MEDIA -->
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+					style="table-layout: fixed;">
+					<tr>
+						<td align="center" style="padding: 0 0 0 0; border: 0;" class="padding-zero">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+								class="responsive-table">
+								<tr>
+									<td style="padding: 10px 0 10px 0;">
+										<table width="100%" align="left" cellpadding="0" cellspacing="0" border="0"
+											role="presentation" class="responsive-table">
+											<tr>
+												<td align="center"
+													style="padding: 0 0 8px 0; text-align: center; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													Connect with us
+												</td>
+											</tr>
+											<tr>
+												<td align="center" style="padding: 0 0 8px 0; ">
+													<table align="center" cellpadding="0" cellspacing="0" border="0"
+														role="presentation">
+														<tr>
+															<td width="40" align="center" style="padding: 0 0 0 0;">
+																<a href="https://www.facebook.com/hyundaicanada/"
+																	alias="SM01 - Facebook" target="_blank"
+																	style="text-decoration: none !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;">
+																	<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Social-001_1Facebook-X-X.png"
+																		width="40" height="45" border="0"
+																		style="display:block; padding: 0; width: 40px; height: 45px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;"
+																		alt="&nbsp;&nbsp;Fackbook&nbsp;&nbsp;">
+																</a>
+															</td>
+
+															<td width="50" align="center" style="padding: 0 0 0 0;">
+																<a href="https://www.youtube.com/user/hyundaicanada"
+																	alias="SM02 - Youtube" target="_blank"
+																	style="text-decoration: none !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;">
+																	<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Social-001_2Youtube-X-X.png"
+																		width="50" height="45" border="0"
+																		style="display:block; padding: 0; width: 50px; height: 45px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;"
+																		alt="&nbsp;&nbsp;Youtube&nbsp;&nbsp;">
+																</a>
+															</td>
+
+															<td width="40" align="center" style="padding: 0 0 0 0;">
+																<a href="https://www.instagram.com/hyundaicanada/"
+																	alias="SM03 - Instagram" target="_blank"
+																	style="text-decoration: none !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;">
+																	<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Social-001_3Instagram-X-X.png"
+																		width="40" height="45" border="0"
+																		style="display:block; padding: 0; width: 40px; height: 45px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;"
+																		alt="&nbsp;&nbsp;Instagram&nbsp;&nbsp;">
+																</a>
+															</td>
+
+															<td width="35" align="center" style="padding: 0 0 0 0;">
+																<a href="https://www.threads.com/@hyundaicanada"
+																	alias="SM04 - Threads" target="_blank"
+																	style="text-decoration: none !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;">
+																	<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Social-001_4Threads-X-X.png"
+																		width="35" height="45" border="0"
+																		style="display:block; padding: 0; width: 35px; height: 45px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;"
+																		alt="&nbsp;&nbsp;Threads&nbsp;&nbsp;">
+																</a>
+															</td>
+
+															<td width="37" align="center" style="padding: 0 0 0 0;">
+																<a href="https://www.tiktok.com/@hyundaicanada"
+																	alias="SM05 - Tiktok" target="_blank"
+																	style="text-decoration: none !important; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;">
+																	<img src="https://image.mc.hyundaicanada.ca/lib/fe2c117371640474711274/m/1/H0000-000-0_Social-001_5Tiktok-X-X.png"
+																		width="37" height="45" border="0"
+																		style="display:block; padding: 0; width: 37px; height: 45px; font-family: 'HyundaiSansHead', Arial, sans-serif; font-weight: 700; font-size: 15px; line-height: 24px; color: #002c5f;"
+																		alt="&nbsp;&nbsp;TikTok&nbsp;&nbsp;">
+																</a>
+															</td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+											<tr>
+												<td align="center"
+													style="padding: 0 0 0 0; text-align: center; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													<a href="https://preferences.hyundaicanada.ca/en/communicationpreferences/editpreferences?groupid=%%GroupId%%&encrypted_gid=%%EncryptedGID%%"
+														alias="Legal01 - Unsubscribe" target="_blank"
+														style="font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c; text-decoration: underline;">Unsubscribe</a>
+													|
+													<a href="https://www.hyundaicanada.com/en/about/privacy-notice"
+														alias="Legal02 - Policy" target="_blank"
+														style="font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c; text-decoration: underline;">Privacy&nbsp;Policy</a>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+				<!-- LEGAL -->
+				<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+					style="table-layout: fixed;">
+					<tr>
+						<td style="padding: 0 25px 0 25px;" class="mobile-pad-25">
+							<table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+								class="responsive-table">
+								<tr>
+									<td style="padding: 25px 0 50px 0;">
+										<table width="100%" cellpadding="0" cellspacing="0" border="0"
+											role="presentation">
+											<tr>
+												<td
+													style="padding: 0 0 10px 0; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													To ensure you receive Hyundai emails, add us to your address book or
+													safe senders&nbsp;list.
+												</td>
+											</tr>
+
+											<tr>
+												<td
+													style="padding: 0 0 10px 0; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													Update your language preference via the <a
+														href="https://preferences.hyundaicanada.ca/en/communicationpreferences/editpreferences?groupid=%%GroupId%%&encrypted_gid=%%EncryptedGID%%"
+														alias="Legal04 - UpdatePreference" target="_blank"
+														style="font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c; text-decoration: underline;">Communication
+														Preference Centre</a>.
+												</td>
+											</tr>
+											<tr>
+												<td
+													style="padding: 0 0 10px 0; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													For customer service inquiries regarding your vehicle, warranty,
+													service or other inquiries, visit us at <a
+														href="https://www.hyundaicanada.com/en/about/helpcentre"
+														alias="Legal04 - UpdatePreference" target="_blank"
+														style="font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c; text-decoration: underline;">hyundaicanada.com/helpcentre</a>.
+												</td>
+											</tr>
+
+											<tr>
+												<td
+													style="padding: 0 0 10px 0; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													The Hyundai name, logos, product names, feature names, images and
+													slogans are trademarks owned or licensed by Hyundai Auto Canada
+													Corp. All other trademarks are the property of their respective
+													owners.
+												</td>
+											</tr>
+
+											<tr>
+												<td align="left"
+													style="padding: 20px 0 0 0; text-align: left; font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 400; font-size: 11px; line-height: 140%; color: #6c6c6c;">
+													<span
+														style="font-family: 'HyundaiSansText', Arial, sans-serif; font-weight: 700; font-size: 11px; line-height: 140%; color: #6c6c6c;">Hyundai
+														Auto Canada Corp.</span>
+													<br>
+													75 Frontenac Drive, Markham, Ontario
+													<br>
+													L3R 6H2
+													<custom name="opencounter" type="tracking" />
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+
+
+			</td>
+		</tr>
+	</table>
+</body>
+
+</html>
