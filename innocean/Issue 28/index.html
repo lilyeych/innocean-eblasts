@@ -1,0 +1,1599 @@
+<!doctype html>
+<html xmlns="https://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml"
+  xmlns:o="urn:schemas-microsoft-com:office:office">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no,date=no,address=no,email=no,url=no" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="x-apple-disable-message-reformatting" />
+  <title>INNOCEAN Deep Dive: Issue 27 – August 2026</title>
+  <style type="text/css">
+    /* CLIENT-SPECIFIC STYLES */
+
+    * {
+      mso-line-height-rule: exactly;
+    }
+
+    body,
+    div,
+    table,
+    td,
+    p,
+    a,
+    li {
+      -webkit-text-size-adjust: 100% !important;
+      -ms-text-size-adjust: 100% !important;
+    }
+
+    #outlook a {
+      padding: 0;
+    }
+
+    .ReadMsgBody {
+      width: 100%;
+    }
+
+    .ExternalClass {
+      width: 100%;
+    }
+
+    .ExternalClass,
+    .ExternalClass p,
+    .ExternalClass span,
+    .ExternalClass font,
+    .ExternalClass td,
+    .ExternalClass div {
+      line-height: 100%;
+    }
+
+    table,
+    tr,
+    td {
+      border-spacing: 0 !important;
+      mso-table-lspace: 0px !important;
+      mso-table-rspace: 0pt !important;
+      mso-line-height-rule: exactly !important;
+    }
+
+    img {
+      -ms-interpolation-mode: bicubic !important;
+    }
+
+    /* RESET STYLES */
+
+    table,
+    td {
+      border-collapse: collapse !important;
+    }
+
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+
+    img {
+      border: 0;
+      height: auto;
+      line-height: 100%;
+      outline: none;
+      text-decoration: none;
+    }
+
+    /* iOS BLUE LINK FIX */
+
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    /* Gmail BLUE LINK FIX - Apply ID to body tag */
+
+    u+#body a {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    /* Else BLUE LINK FIX */
+
+    span.blue-link-fix a {
+      color: inherit !important;
+      text-decoration: none !important;
+      font-size: inherit !important;
+      font-family: inherit !important;
+      font-weight: inherit !important;
+      line-height: inherit !important;
+    }
+
+    /* ANDROID CENTER FIX */
+
+    div[style*="margin: 16px 0"] {
+      margin: 0 !important;
+    }
+
+    /* LIST ITEM FIX */
+
+    li {
+      text-align: -webkit-match-parent;
+      display: list-item;
+    }
+
+    /* STOP HYPHENATION */
+
+    td {
+      word-break: keep-all !important;
+      -moz-hyphens: none !important;
+      -ms-hyphens: none !important;
+      -webkit-hyphens: none !important;
+      hyphens: none !important;
+    }
+
+    /* DESKTOP STYLES */
+    @media all and (min-width: 640px) {
+      .headline-on-desktop {
+        font-size: 26px !important;
+        line-height: 34px !important;
+      }
+    }
+
+    /* MOBILE STYLES */
+
+    @media screen and (max-width: 639px) {
+      .w100 {
+        width: 100% !important;
+        min-width: initial !important;
+      }
+
+      .hide-on-mobile {
+        display: none !important;
+        max-height: 0 !important;
+        overflow: hidden !important;
+      }
+
+      .show-on-mobile {
+        display: inline-block !important;
+        max-height: none !important;
+      }
+
+      .display-on-mobile {
+        display: block !important;
+        max-height: none !important;
+      }
+
+      .stack-column-left,
+      .stack-column-center,
+      .stack-column-right {
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        direction: ltr !important;
+      }
+
+      .stack-column-center {
+        text-align: center !important;
+      }
+
+      .stack-column-right {
+        text-align: right;
+      }
+
+      .responsive-cell {
+        width: 100% !important;
+      }
+
+      /* FULL-WIDTH TABLES */
+      .responsive-table {
+        display: table !important;
+        width: 100% !important;
+      }
+
+      /* FULL-WIDTH IMAGES */
+      .img-max {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+
+      /* FULL-WIDTH IMAGES - FORGO ORIGINAL SIZE */
+      .img-max-100 {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      /* ADJUST MOBILE PADDING */
+      .mobile-pad {
+        padding-right: 6.25% !important;
+        padding-left: 6.25% !important;
+      }
+
+      /* ADJUST MOBILE BOTTOM PADDING */
+      .mobile-bottom-pad {
+        padding-bottom: 18px !important;
+      }
+
+      /* ADJUST MOBILE PADDING */
+      .padding-zero {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+
+      /* ADJUST FONT SIZE */
+      td.mobile-font-size {
+        font-size: 28px !important;
+        line-height: 32px !important;
+      }
+
+      /* CENTRE TEXT ON MOBILE */
+      .mobile-text-center {
+        text-align: center !important;
+      }
+
+      /* SWITCH BORDER DIRECTION */
+      .mobile-border {
+        border-right-color: #eaecec !important;
+        border-bottom: 1px solid #002642;
+      }
+
+      /* ADJUST MOBILE WIDTH */
+      .mobile-width {
+        width: 134px !important;
+      }
+
+      /* ADJUST MOBILE HEIGHT */
+      .mobile-height {
+        height: 160px !important;
+      }
+
+      /* MOBILE LINE BREAK */
+      .mobile-line-break {
+        display: block !important;
+      }
+    }
+  </style>
+  <style type="text/css">
+    @font-face {
+      font-family: "Barlow";
+      font-style: italic;
+      font-weight: 400;
+      src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOQ4mouvToJdLm8.woff2) format("woff2");
+    }
+
+    @font-face {
+      font-family: "Barlow";
+      font-style: italic;
+      font-weight: 700;
+      src: url(https://fonts.gstatic.com/s/barlow/v12/7cHsv4kjgoGqM7E_CfOA5WouvToJdLm8.woff2) format("woff2");
+    }
+
+    @font-face {
+      font-family: "Barlow";
+      font-style: normal;
+      font-weight: 400;
+      src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3p-ks51ostz0rdg.woff2) format("woff2");
+    }
+
+    @font-face {
+      font-family: "Barlow";
+      font-style: normal;
+      font-weight: 700;
+      src: url(https://fonts.gstatic.com/s/barlow/v12/7cHqv4kjgoGqM7E3t-4s51ostz0rdg.woff2) format("woff2");
+    }
+  </style>
+  <!--[if gte mso 9]>
+      <style>
+        li {
+          text-align: -webkit-match-parent;
+          display: list-item;
+          text-indent: -1em;
+        }
+        ul {
+          padding: 0 !important;
+        }
+      </style>
+    <![endif]-->
+
+  <!--[if gte mso 9]>
+      <xml>
+        <o:OfficeDocumentSettings>
+          <o:AllowPNG />
+          <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+      </xml>
+    <![endif]-->
+
+  <!--[if gte mso 9]>
+      <style>
+        .outlook-fix {
+          font-size: 100% !important;
+          vertical-align: top;
+          mso-text-raise: 20%;
+        }
+      </style>
+    <![endif]-->
+
+  <style>
+    .outlook-sup {
+      mso-text-raise: 20%;
+    }
+  </style>
+</head>
+
+<body id="body" bgcolor="#f5f5f5" topmargin="0" rightmargin="0" leftmargin="0" style="
+      margin: 0 !important;
+      padding: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      background-color: #f5f5f5 !important;
+    ">
+  <!-- PREVIEW TEXT -->
+  <div style="
+        display: none;
+        font-size: 1px;
+        color: #f5f5f5;
+        line-height: 1px;
+        max-height: 0px;
+        max-width: 0px;
+        opacity: 0;
+        overflow: hidden;
+      ">
+    CAPTAIN’S LOG: August 2026
+  </div>
+  <!-- BORDER -->
+  <table bgcolor="#f5f5f5" align="center" width="640" cellpadding="0" cellspacing="0" border="0" role="presentation"
+    class="responsive-table" style="table-layout: fixed; background-color: #f5f5f5">
+    <tr>
+      <td bgcolor="#000000" style="padding: 0 0 0 0; background-color: #ffffff">
+        <!-- PREHEADER -->
+
+        <!-- HEADER: IMAGE -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="table-layout: fixed">
+          <tr>
+            <td align="center" style="padding: 0 0 0 0">
+              <table width="640" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                class="responsive-table">
+                <tr>
+                  <td>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                      <tr>
+                        <td align="center">
+                          <img src="https://s0.2mdn.net/creatives/assets/5653823/header.gif" width="640" border="0"
+                            style="
+                                display: block;
+                                padding: 0;
+                                width: 640px;
+                                height: auto;
+                                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                font-weight: 700;
+                                font-size: 15px;
+                                line-height: 24px;
+                                color: #000000;
+                              " class="img-max hide-on-mobile"
+                            alt="Innocean Deep Dive: Captain’s Log: August Newsletter" />
+                          <!--[if !mso]><!-->
+                          <img src="https://s0.2mdn.net/creatives/assets/5653823/header.gif" width="640" border="0"
+                            style="
+                                display: none;
+                                padding: 0;
+                                width: 100%;
+                                max-width: 640px;
+                                height: auto;
+                                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                font-weight: 700;
+                                font-size: 15px;
+                                line-height: 24px;
+                                color: #000000;
+                              " class="img-max display-on-mobile"
+                            alt="Innocean Deep Dive: Captain’s Log: August Newsletter" />
+                          <!--<![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <!-- HEADLINE: CONTENT -->
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="table-layout: fixed">
+          <tr>
+            <td align="center" style="padding: 0 40px 0 40px" class="mobile-pad">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                class="responsive-table">
+                <tr>
+                  <td style="padding: 10px 0 10px 0">
+                    <table width="100%" align="left" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                      class="responsive-table">
+                      <tr>
+                        <td aligh="left" style="
+                              font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                              font-weight: 400;
+                              font-size: 13px;
+                              line-height: 18px;
+                            ">
+                          <span style="
+                                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                font-weight: 700;
+                                font-size: 14px;
+                                line-height: 24px;
+                              ">
+                            Issue 27
+                          </span>
+                          <br />
+
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 5px 0 5px 0;
+                                    text-align: center;
+                                  ">
+                                <img src="https://s0.2mdn.net/creatives/assets/5576802/bar_1.png" width="560" border="0"
+                                  style="
+                                      padding: 0 0 0 0;
+                                      width: 100%;
+                                      max-width: 560px;
+                                      height: auto;
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                      font-weight: 400;
+                                      font-size: 14px;
+                                      line-height: 24px;
+                                      display: block;
+                                    " class="img-max" alt="" />
+                              </td>
+                            </tr>
+                          </table>
+
+                          <br />
+
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 0 0 0 0;
+                                    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                    font-weight: 700;
+                                    font-size: 26px;
+                                    line-height: 28px;
+                                  ">
+                                NAVIGATOR’S NOTES
+                              </td>
+                            </tr>
+                          </table>
+
+
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                            class="responsive-table">
+                            <tr>
+                              <td width="392" valign="top" style="padding: 0 15px 0 0"
+                                class="stack-column-left padding-zero">
+                                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                                  class="responsive-table">
+
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                      padding: 15px 0 15px 0;
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                      font-weight: 700;
+                                      font-size: 13px;
+                                      line-height: 18px;
+                                    ">
+                                      Move audiences through relevancy.
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      The Kia team has a tall order for 2026: launch five nameplates, each with a
+                                      distinct story and audience.
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      That’s no small task when brands are fighting for attention across more
+                                      screens, platforms and touchpoints. It’s easy to add to the noise. It’s much
+                                      harder to make people care.
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      For us, that’s where cultural relevancy comes in. It means understanding
+                                      what’s happening in our audience’s world, uncovering the human insights,
+                                      and finding where they can credibly intersect with our brand.
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      For our <a href="https://www.youtube.com/watch?v=tOuLpzY0Cmc" target="_blank"
+                                        style="
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                      text-decoration: none !important;
+                                      color: #0000ff !important;
+                                    ">Seltos campaign</a>, we tapped into the feeling of “finding your era”.
+                                      Rather than simply talking at our target, we connected with the values,
+                                      language, tensions, and social context shaping how they see themselves
+                                      and the world around them.
+                                    </td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      <a href="https://www.youtube.com/watch?v=ETQGdX07pSo" target="_blank" style="
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                      text-decoration: none !important;
+                                      color: #0000ff !important;
+                                    ">EV4</a>? We partnered with REZZ, stepping into her hypnotic visual world and
+                                      connecting it with the equally “next level” EV4 to not just talk about it, but
+                                      be about it.
+                                    </td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      With <a href="https://www.youtube.com/watch?v=8mpSpwwh3_Q" target="_blank" style="
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                      text-decoration: none !important;
+                                      color: #0000ff !important;
+                                    ">EV5</a>, we tapped into a cultural shift: there’s no single definition of
+                                      family life anymore, and it rarely stands still. Needs shift and roles evolve.
+                                      Our campaign positioned versatility as more than a product benefit – it
+                                      became a true reflection of modern family life.
+                                    </td>
+                                  </tr>
+
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      Different nameplates, different audiences, but one shared principle:
+                                      relevance turns attention into connection.
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      As we tackle what’s to come, we’ll keep asking: What’s changing in our
+                                      audience’s world? Why does it matter to them? And where does our brand
+                                      have a real reason to show up and create momentum?
+                                    </td>
+                                  </tr>
+
+                                  <tr>
+                                    <td width="100%" valign="top" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                        ">
+                                      When we understand what moves people, we can create work that moves
+                                      everything forward.
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                              <td width="168" valign="top" style="padding: 18px 0 10px 0"
+                                class="stack-column-left padding-zero">
+                                <table role="presentation" width="168" cellspacing="0" cellpadding="0" border="0"
+                                  class="responsive-table">
+                                  <tr>
+                                    <td style="
+                                          padding: 3px 0 12px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          text-align: left !important;
+                                        " valign="top">
+                                      <center>
+                                        <img src="https://s0.2mdn.net/creatives/assets/5653823/insert_n1.png"
+                                          width="168" border="0" style="
+                                              display: block;
+                                              padding: 0;
+                                              width: 100%;
+                                              max-width: 240px;
+                                              height: auto;
+                                              font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                              font-weight: 400;
+                                              font-size: 14px;
+                                              line-height: 24px;
+                                              color: #000000;
+                                            " alt="Daniel Vescio" />
+                                      </center>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td class="stack-column-center" style="
+                                          padding: 0 0 15px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                          text-align: center;
+                                        " valign="top">
+                                      <span style="
+                                            color: #0000ff;
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 12px;
+                                            line-height: 14px;
+                                          ">Daniel Vescio</span><br />
+                                      <span style="
+                                            color: #000000;
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 12px;
+                                            line-height: 14px;
+                                          ">Group Account Director</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="table-layout: fixed;">
+          <tbody>
+            <tr>
+              <td align="center" style="padding: 0 40px 0 40px;" class="mobile-pad">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                  class="responsive-table">
+                  <tbody>
+                    <tr>
+                      <td style="padding: 20px 0 10px 0;">
+                        <table width="100%" align="left" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                          class="responsive-table">
+                          <tbody>
+                            <tr>
+                              <td aligh="left"
+                                style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;">
+
+
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tbody>
+                                    <tr>
+                                      <td style="padding: 0 0 15px 0; text-align: center;">
+                                        <img src="https://s0.2mdn.net/creatives/assets/5576802/bar_1.png" width="560"
+                                          border="0"
+                                          style="padding: 0 0 0 0; width: 100%; max-width: 560px; height: auto; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 14px; line-height: 24px; display: block;"
+                                          class="img-max" alt="">
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tbody>
+                                    <tr>
+                                      <td valign="top" align="left"
+                                        style="padding: 20px 0 0 0 !important; width:100%; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:700; font-size: 21px; line-height: 26px; mso-line-height-rule:exactly; color: #0000ff;">
+                                        Sea La Vie</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+
+                                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                                  class="responsive-table">
+                                  <tbody>
+                                    <tr>
+                                      <td width="100%" valign="top" style="padding: 10px 0 0 0;" class="padding-zero">
+                                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                                          border="0" class="responsive-table">
+                                          <tbody>
+                                            <tr>
+                                              <td style="padding:0 0 0 0; text-align:center;" valign="top"
+                                                class="padding-zero">
+                                                <center>
+                                                  <img src="https://s0.2mdn.net/creatives/assets/5653823/insert_x1.png"
+                                                    width="560" border="0"
+                                                    style="display: block; padding: 0; width: 100%; max-width: 560px; height: auto; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; font-size: 14px; line-height: 24px; color: #000000;"
+                                                    alt="Sea La Vie">
+                                                </center>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        Thank you for the music, the songs we sang, and all the joy they
+                                        brought…&nbsp;🎵
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        A few weeks ago, we said Sea La Vie and traded the office for a little
+                                        Mediterranean escape at our annual INNOCEAN Canada Summer Party. With Mamma Mia
+                                        energy and Greek island vibes in full swing, The Parlour became our home for an
+                                        afternoon of good food, featured cocktails, karaoke, games, and even better
+                                        company.
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        INNOCEAN Bingo got everyone mixing and mingling beyond their usual teams, with
+                                        <span
+                                          style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:700; font-size: 13px; line-height: 18px;">David
+                                          Nolet</span> and <span
+                                          style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:700; font-size: 13px; line-height: 18px;">Sal
+                                          Sharma</span> taking home the wins. And because no
+                                        Mamma&nbsp;Mia&#8209;inspired party would be complete without a little singing,
+                                        the karaoke mic
+                                        stayed busy, with <span
+                                          style="font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:700; font-size: 13px; line-height: 18px;">Josh
+                                          Murray</span> earning the top&nbsp;spot.&nbsp;🎤
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        Between photo booth poses, ping pong, cocktails, singalongs, and a little
+                                        friendly competition, it was great to see everyone step away from their screens
+                                        and spend some quality time together. More importantly, it gave us a chance to
+                                        do soju bombs with people we might not get to work with every&nbsp;day.
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        A huge thank you to everyone who came out and made the afternoon what it was.
+                                        And an extra special shoutout to our Social Committee for dreaming up the
+                                        details and bringing Sea La Vie to&nbsp;life.
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:700; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        Want to relive the day?
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                        style="padding:0 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        Check out the <a
+                                          href="https://drive.google.com/drive/folders/1N8NVg-OxFzZPqa5LsWnNt48UgG7i6XSo?usp=sharing"
+                                          target="_blank" style="
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                      text-decoration: none !important;
+                                      color: #0000ff !important;
+                                    ">Event Photos</a> and <a href="https://sodapopbooth.boothpics.com/CDFY#slideshow"
+                                          target="_blank" style="
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 13px;
+                                          line-height: 18px;
+                                      text-decoration: none !important;
+                                      color: #0000ff !important;
+                                    ">Photo Booth Photos</a> for all the moments you
+                                        caught, missed, or may have forgotten.&nbsp;📸
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 10px 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:700; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        Until next time, Sea La Vie!
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tbody>
+                                    <tr>
+                                      <td style="padding: 35px 0 15px 0; text-align: center;">
+                                        <img src="https://s0.2mdn.net/creatives/assets/5576802/bar_1.png" width="560"
+                                          border="0"
+                                          style="padding: 0 0 0 0; width: 100%; max-width: 560px; height: auto; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 14px; line-height: 24px; display: block;"
+                                          class="img-max" alt="">
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tbody>
+                                    <tr>
+                                      <td valign="top" align="left"
+                                        style="padding: 20px 0 0 0 !important; width:100%; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:700; font-size: 21px; line-height: 26px; mso-line-height-rule:exactly; color: #0000ff;">
+                                        Summer, Montréal Style</td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+                                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        Our Montréal team celebrated summer their own way with an intimate gathering
+                                        hosted by Catherine at her home. With a private chef, great food, and even
+                                        better company, it was the perfect setting to relax, catch up, and spend some
+                                        quality time&nbsp;together.
+                                      </td>
+                                    </tr>
+
+                                    <tr>
+                                      <td
+                                        style="padding:15px 0 0 0; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight:400; font-size: 13px; line-height: 18px;"
+                                        valign="top">
+                                        A big thank you to Catherine for opening her home and hosting such a special
+                                        afternoon for our INNOCEAN Montréal family. Santé!&nbsp;🥂
+                                      </td>
+                                    </tr>
+
+
+                                  </tbody>
+                                </table>
+
+
+                                <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                                  class="responsive-table">
+                                  <tbody>
+                                    <tr>
+                                      <td width="100%" valign="top" style="padding: 10px 0 0 0;" class="padding-zero">
+                                        <table role="presentation" width="100%" cellspacing="0" cellpadding="0"
+                                          border="0" class="responsive-table">
+                                          <tbody>
+                                            <tr>
+                                              <td style="padding:0 0 0 0; text-align:center;" valign="top"
+                                                class="padding-zero">
+                                                <center>
+                                                  <img src="https://s0.2mdn.net/creatives/assets/5653823/insert_x2.png"
+                                                    width="560" border="0"
+                                                    style="display: block; padding: 0; width: 100%; max-width: 560px; height: auto; font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif; font-weight: 400; font-size: 14px; line-height: 24px; color: #000000;"
+                                                    alt="Summer, Montréal Style">
+                                                </center>
+                                              </td>
+                                            </tr>
+                                          </tbody>
+                                        </table>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+
+
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="table-layout: fixed">
+          <tr>
+            <td align="center" style="padding: 10px 0 0 0">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                class="responsive-table">
+                <tr>
+                  <td>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation">
+                      <tr>
+                        <td align="center">
+                          <img src="https://s0.2mdn.net/creatives/assets/5653823/main.png" width="640" border="0" style="
+                                display: block;
+                                padding: 0;
+                                width: 640px;
+                                height: auto;
+                                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                font-weight: 700;
+                                font-size: 15px;
+                                line-height: 24px;
+                                color: #000000;
+                              " class="img-max hide-on-mobile"
+                            alt="New Explorer Alert | Adish Gandhi - Performance Digital Coordinator | Jared Wineberg - Sr. Strategist | Jenny Kim - Executive Producer | Mikaela Barbosa - Integrated Producer | Saba Rahimi - Jr. Designer | Tatum Kibbey-Dunne - Jr. Producer | Viffaq Sidiqi - Account Executive" />
+                          <!--[if !mso]><!-->
+                          <img src="https://s0.2mdn.net/creatives/assets/5653823/main.png" width="640" border="0" style="
+                                display: none;
+                                padding: 0;
+                                width: 100%;
+                                max-width: 640px;
+                                height: auto;
+                                font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                font-weight: 700;
+                                font-size: 15px;
+                                line-height: 24px;
+                                color: #000000;
+                              " class="img-max display-on-mobile"
+                            alt="New Explorer Alert | Adish Gandhi - Performance Digital Coordinator | Jared Wineberg - Sr. Strategist | Jenny Kim - Executive Producer | Mikaela Barbosa - Integrated Producer | Saba Rahimi - Jr. Designer | Tatum Kibbey-Dunne - Jr. Producer | Viffaq Sidiqi - Account Executive" />
+                          <!--<![endif]-->
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation" style="table-layout: fixed">
+          <tr>
+            <td align="center" style="padding: 0 40px 0 40px" class="mobile-pad">
+              <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                class="responsive-table">
+                <tr>
+                  <td style="padding: 20px 0 20px 0">
+                    <table width="100%" align="left" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                      class="responsive-table">
+                      <tr>
+                        <td aligh="left" style="
+                              font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                              font-weight: 400;
+                              font-size: 14px;
+                              line-height: 18px;
+                            ">
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 25px 0 0 0;
+                                    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                    font-weight: 700;
+                                    font-size: 26px;
+                                    line-height: 28px;
+                                  ">
+                                UPCOMING
+                                <span style="
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                      font-weight: 700;
+                                      font-size: 26px;
+                                      line-height: 28px;
+                                      color: #0000ff;
+                                    ">EVENTS</span>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <br />
+
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                            class="responsive-table">
+                            <tr>
+                              <td width="100%" valign="top" style="padding: 5px 0 10px 0">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tr>
+                                    <td valign="top" style="
+                                          width: 105px;
+                                          vertical-align: top;
+                                          text-align: left;
+                                          padding: 0 5px 10px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 24px;
+                                        ">
+                                      <img src="https://s0.2mdn.net/creatives/assets/5576802/insert_e1.png" width="101"
+                                        border="0" style="
+                                            display: block;
+                                            padding: 0;
+                                            width: 100%;
+                                            max-width: 101px;
+                                            height: auto;
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                            line-height: 96px;
+                                            color: #0000ff;
+                                          " alt="" />
+                                    </td>
+                                    <td valign="middle" style="
+                                          vertical-align: middle;
+                                          text-align: left;
+                                          padding: 0 0 10px 0;
+                                        ">
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                          ">SEPTEMBER 4</span>
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                            color: #0000ff;
+                                          ">AGENCY&nbsp;DAY</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                            class="responsive-table">
+                            <tr>
+                              <td width="100%" valign="top" style="padding: 5px 0 10px 0">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tr>
+                                    <td valign="top" style="
+                                          width: 105px;
+                                          vertical-align: top;
+                                          text-align: left;
+                                          padding: 0 5px 10px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 24px;
+                                        ">
+                                      <img src="https://s0.2mdn.net/creatives/assets/5576802/insert_e2.png" width="101"
+                                        border="0" style="
+                                            display: block;
+                                            padding: 0;
+                                            width: 100%;
+                                            max-width: 101px;
+                                            height: auto;
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                            line-height: 96px;
+                                            color: #0000ff;
+                                          " alt="" />
+                                    </td>
+                                    <td valign="middle" style="
+                                          vertical-align: middle;
+                                          text-align: left;
+                                          padding: 0 0 10px 0;
+                                        ">
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                          ">SEPTEMBER 7</span>
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                            color: #0000ff;
+                                          ">LABOUR&nbsp;DAY</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                            class="responsive-table">
+                            <tr>
+                              <td width="100%" valign="top" style="padding: 5px 0 10px 0">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tr>
+                                    <td valign="top" style="
+                                          width: 105px;
+                                          vertical-align: top;
+                                          text-align: left;
+                                          padding: 0 5px 10px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 24px;
+                                        ">
+                                      <img src="https://s0.2mdn.net/creatives/assets/5576802/insert_e3.png" width="101"
+                                        border="0" style="
+                                            display: block;
+                                            padding: 0;
+                                            width: 100%;
+                                            max-width: 101px;
+                                            height: auto;
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                            line-height: 96px;
+                                            color: #0000ff;
+                                          " alt="" />
+                                    </td>
+                                    <td valign="middle" style="
+                                          vertical-align: middle;
+                                          text-align: left;
+                                          padding: 0 0 10px 0;
+                                        ">
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                          ">SEPTEMBER 21</span><br />
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                            color: #0000ff;
+                                          ">INNOCEAN&nbsp;CANADA 17TH&nbsp;ANNIVERSARY</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                            class="responsive-table">
+                            <tr>
+                              <td width="100%" valign="top" style="padding: 5px 0 10px 0">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tr>
+                                    <td valign="top" style="
+                                          width: 105px;
+                                          vertical-align: top;
+                                          text-align: left;
+                                          padding: 0 5px 10px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 24px;
+                                        ">
+                                      <img src="https://s0.2mdn.net/creatives/assets/5576802/insert_e4.png" width="101"
+                                        border="0" style="
+                                            display: block;
+                                            padding: 0;
+                                            width: 100%;
+                                            max-width: 101px;
+                                            height: auto;
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                            line-height: 96px;
+                                            color: #0000ff;
+                                          " alt="" />
+                                    </td>
+                                    <td valign="middle" style="
+                                          vertical-align: middle;
+                                          text-align: left;
+                                          padding: 0 0 10px 0;
+                                        ">
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                          ">SEPTEMBER 25</span><br />
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                            color: #0000ff;
+                                          ">KOREAN THANKSGIVING (CHUSEOK)</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                            class="responsive-table">
+                            <tr>
+                              <td width="100%" valign="top" style="padding: 5px 0 10px 0">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tr>
+                                    <td valign="top" style="
+                                          width: 105px;
+                                          vertical-align: top;
+                                          text-align: left;
+                                          padding: 0 5px 10px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 24px;
+                                        ">
+                                      <img src="https://s0.2mdn.net/creatives/assets/5576802/insert_e5.png" width="101"
+                                        border="0" style="
+                                            display: block;
+                                            padding: 0;
+                                            width: 100%;
+                                            max-width: 101px;
+                                            height: auto;
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                            line-height: 96px;
+                                            color: #0000ff;
+                                          " alt="" />
+                                    </td>
+                                    <td valign="middle" style="
+                                          vertical-align: middle;
+                                          text-align: left;
+                                          padding: 0 0 10px 0;
+                                        ">
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                          ">OCTOBER 12</span><br />
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                            color: #0000ff;
+                                          ">CANADIAN THANKSGIVING</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0"
+                            class="responsive-table">
+                            <tr>
+                              <td width="100%" valign="top" style="padding: 5px 0 10px 0">
+                                <table width="100%" cellpadding="0" cellspacing="0" border="0" role="presentation"
+                                  class="responsive-table">
+                                  <tr>
+                                    <td valign="top" style="
+                                          width: 105px;
+                                          vertical-align: top;
+                                          text-align: left;
+                                          padding: 0 5px 10px 0;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 700;
+                                          font-size: 24px;
+                                        ">
+                                      <img src="https://s0.2mdn.net/creatives/assets/5576802/insert_e6.png" width="101"
+                                        border="0" style="
+                                            display: block;
+                                            padding: 0;
+                                            width: 100%;
+                                            max-width: 101px;
+                                            height: auto;
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                            line-height: 96px;
+                                            color: #0000ff;
+                                          " alt="" />
+                                    </td>
+                                    <td valign="middle" style="
+                                          vertical-align: middle;
+                                          text-align: left;
+                                          padding: 0 0 10px 0;
+                                        ">
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                          ">OCTOBER 30</span>
+                                      <span style="
+                                            font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                            font-weight: 700;
+                                            font-size: 18px;
+                                            line-height: 22px;
+                                            color: #0000ff;
+                                          ">HALLOWEEN</span>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+
+
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 15px 0 15px 0;
+                                    text-align: center;
+                                  ">
+                                <img src="https://s0.2mdn.net/creatives/assets/5576802/bar_1.png" width="560" border="0"
+                                  style="
+                                      padding: 0 0 0 0;
+                                      width: 100%;
+                                      max-width: 560px;
+                                      height: auto;
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                      font-weight: 400;
+                                      font-size: 14px;
+                                      line-height: 24px;
+                                      display: block;
+                                    " class="img-max" alt="" />
+                              </td>
+                            </tr>
+                          </table>
+
+                          <br />
+
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 0 0 0 0;
+                                    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                    font-weight: 700;
+                                    font-size: 26px;
+                                    line-height: 28px;
+                                    text-align: center;
+                                  ">
+                                <center>
+                                  <span style="
+                                        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                        font-weight: 700;
+                                        font-size: 26px;
+                                        line-height: 28px;
+                                      ">EXPLORE OUR&nbsp;SOCIALS</span>
+                                </center>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 15px 0 5px 0;
+                                    text-align: center;
+                                    font-size: 36px;
+                                  ">
+                                <center>
+                                  <a href="https://www.instagram.com/innoceancanada?igsh=MXN3aWdjcHl5Z2N2bw=="
+                                    target="_blank"><img
+                                      src="https://s0.2mdn.net/creatives/assets/5576802/icon_instagram.png" width="75"
+                                      border="0" style="
+                                          padding: 0 0 0 0;
+                                          width: 75px;
+                                          height: auto;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 14px;
+                                          line-height: 24px;
+                                          display: inline-block;
+                                        " alt="Instagram" /></a>
+                                  &nbsp;<span class="hide-on-mobile">&nbsp;&nbsp;&nbsp;</span>
+                                  <a href="https://www.facebook.com/share/1B1VWjEeUS/?mibextid=LQQJ4d"
+                                    target="_blank"><img
+                                      src="https://s0.2mdn.net/creatives/assets/5576802/icon_facebook.png" width="75"
+                                      border="0" style="
+                                          padding: 0 0 0 0;
+                                          width: 75px;
+                                          height: auto;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 14px;
+                                          line-height: 24px;
+                                          display: inline-block;
+                                        " alt="Facebook" /></a>
+                                  &nbsp;<span class="hide-on-mobile">&nbsp;&nbsp;&nbsp;</span>
+                                  <a href="https://ca.linkedin.com/company/innocean-canada" target="_blank"><img
+                                      src="https://s0.2mdn.net/creatives/assets/5576802/icon_linkedin.png" width="75"
+                                      border="0" style="
+                                          padding: 0 0 0 0;
+                                          width: 75px;
+                                          height: auto;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 14px;
+                                          line-height: 24px;
+                                          display: inline-block;
+                                        " alt="LinkedIn" /></a>
+                                </center>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 15px 0 15px 0;
+                                    text-align: center;
+                                  ">
+                                <img src="https://s0.2mdn.net/creatives/assets/5576802/bar_1.png" width="560" border="0"
+                                  style="
+                                      padding: 0 0 0 0;
+                                      width: 100%;
+                                      max-width: 560px;
+                                      height: auto;
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                      font-weight: 400;
+                                      font-size: 14px;
+                                      line-height: 24px;
+                                      display: block;
+                                    " class="img-max" alt="" />
+                              </td>
+                            </tr>
+                          </table>
+
+                          <br />
+
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 0 0 0 0;
+                                    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                    font-weight: 700;
+                                    font-size: 26px;
+                                    line-height: 28px;
+                                    text-align: center;
+                                  ">
+                                <a href="https://www.innocean.ca" target="_blank" style="
+                                      font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                      font-weight: 700;
+                                      font-size: 26px;
+                                      line-height: 28px;
+                                      text-decoration: none !important;
+                                      color: #000000 !important;
+                                    ">WWW.INNOCEAN.CA</a>
+                              </td>
+                            </tr>
+                          </table>
+
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0" role="presentation"
+                            class="responsive-table">
+                            <tr>
+                              <td style="
+                                    padding: 15px 0 5px 0;
+                                    text-align: center;
+                                  ">
+                                <center>
+                                  <a href="https://www.innocean.ca" target="_blank" style="
+                                        font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                        font-weight: 700;
+                                        font-size: 26px;
+                                        line-height: 28px;
+                                        text-decoration: none !important;
+                                        color: #000000;
+                                      ">
+                                    <img src="https://s0.2mdn.net/creatives/assets/5576802/stamp.png" width="150"
+                                      border="0" style="
+                                          padding: 0 0 0 0;
+                                          width: 150px;
+                                          height: auto;
+                                          font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+                                          font-weight: 400;
+                                          font-size: 14px;
+                                          line-height: 24px;
+                                          display: inline-block;
+                                        " alt="EXPLORE" />
+                                  </a>
+                                </center>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
